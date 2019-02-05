@@ -1,20 +1,30 @@
-<h1> all articles </h1>
+<<div class="container">
+
+<h1 style="text-align: center"> ALL ARTICLES </h1>
 
 <p>
 <%= link_to "create new article", new_article_path %>
 </p>
-<table>
+<table class="table table-striped">
+  <thead class="thead-dark">
   <tr>
     <th>Title</th>
     <th>Description</th>
+    <th>Edit</th>
+    <th>Show</th>
+    <th>Delete</th>
   </tr>
+  </thead>
+<tbody>
   <% @articles.each do |article| %>
   <tr>
-    <td><%= article.title %></td>
-    <td><%= article.description %></td>
+    <td style="max-width: 150px"><%= article.title %></td>
+    <td style="max-width: 50px; white-space:nowrap;overflow:hidden;"><%= article.description %></td>
     <td><%= link_to "edit", edit_article_path(article) %></td>
     <td><%= link_to "show", article_path(article) %></td>
     <td><%= link_to "delete", article_path(article), method: :delete, data: {confirm: "are you sure?"} %></td>
   </tr>
   <% end %>
+  </tbody>
 </table>
+</div>

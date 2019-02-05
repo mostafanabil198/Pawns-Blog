@@ -1,2 +1,46 @@
-@import "bootstrap-sprockets";
+/* @import "bootstrap-sprockets"; */
 @import "bootstrap";
+
+.article-div{
+  padding: 100px;
+}
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: white;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 3px 3px 7px #252729;
+}
+
+#logo:hover{
+  color: #b1b1b1;
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+
+.jumbotron{
+  padding-top: 13%;
+  text-align: center;
+  color: white;
+  background-image: asset-url("Blog_header_user_flow_02.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 51.4em;
+  margin-bottom: -4px;
+}
+
+.footer {
+  text-align: center;
+  font-size: 1.5em;
+  background-color: #0a0b0c;
+  padding: 15px;
+  color: white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
+}
