@@ -10,6 +10,7 @@
   <tr>
     <th>Title</th>
     <th>Description</th>
+    <th>author</th>
     <th>Edit</th>
     <th>Show</th>
     <th>Delete</th>
@@ -20,6 +21,7 @@
   <tr>
     <td style="max-width: 150px"><%= article.title %></td>
     <td style="max-width: 50px; white-space:nowrap;overflow:hidden;"><%= article.description %></td>
+    <td style="max-width: 30px; white-space:nowrap;overflow:hidden;"><%= article.user.userName %></td>
     <td><%= link_to "edit", edit_article_path(article) %></td>
     <td><%= link_to "show", article_path(article) %></td>
     <td><%= link_to "delete", article_path(article), method: :delete, data: {confirm: "are you sure?"} %></td>
