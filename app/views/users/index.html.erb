@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row justify-content-center" style="padding-top: 20px">
+    <div class="col-auto">
+      <h1><strong>Pawns-Blog Users</strong></h1>
+    </div>
+  </div>
+
+
+<% @users.each do |usr| %>
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <div class="jumbotron">
+        <div class="container">
+          <h1 align= "center"> <%= usr.userName %> </h1>
+          <div class="row justify-content-md-center">
+            <div class="col-auto">
+              <%= gravatar_for usr, size: 80%>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <%= pluralize(usr.articles.count, "articles") if usr.articles %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% end %>
+</div>
