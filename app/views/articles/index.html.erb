@@ -1,36 +1,9 @@
-<<div class="container">
+<div class="container">
 
 <h1 style="text-align: center"> ALL ARTICLES </h1>
 
 <p>
 <%= link_to "create new article", new_article_path %>
 </p>
-<table class="table table-striped">
-  <thead class="thead-dark">
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>author</th>
-    <th>Edit</th>
-    <th>Show</th>
-    <th>Delete</th>
-  </tr>
-  </thead>
-<tbody>
-  <% @articles.each do |article| %>
-  <tr>
-    <td style="max-width: 150px"><%= article.title %></td>
-    <td style="max-width: 50px; white-space:nowrap;overflow:hidden;"><%= article.description %></td>
-    <td style="max-width: 30px; white-space:nowrap;overflow:hidden;">
-      <% if article.user != nil %>
-      <%= article.user.userName %>
-      <% end %>
-    </td>
-    <td><%= link_to "edit", edit_article_path(article) %></td>
-    <td><%= link_to "show", article_path(article) %></td>
-    <td><%= link_to "delete", article_path(article), method: :delete, data: {confirm: "are you sure?"} %></td>
-  </tr>
-  <% end %>
-  </tbody>
-</table>
+<%= render 'article', obj: @articles %>
 </div>

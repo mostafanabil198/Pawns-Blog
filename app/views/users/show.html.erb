@@ -1,0 +1,15 @@
+<div class="container">
+  <h1 align="center"> <%= @user.userName %>'s profile </h1>
+  <div class="row justify-content-md-center">
+    <div class="col-2">
+      <%= gravatar_for @user, size: 150%>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-auto">
+      <br>
+      <h4> <%= @user.userName %>'s Articles </h4>
+    </div>
+  </div>
+  <%= render 'articles/article', obj: @user.articles%>
+</div>
