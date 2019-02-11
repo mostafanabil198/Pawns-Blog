@@ -1,9 +1,13 @@
 <div class="container">
-
-<h1 style="text-align: center"> ALL ARTICLES </h1>
-
-<p>
-<%= link_to "create new article", new_article_path %>
-</p>
-<%= render 'article', obj: @articles %>
+  <h1 style="text-align: center"> ALL ARTICLES </h1>
+  <div class="row justify-content-center" style="margin-top:2%">
+    <%= will_paginate %>
+  </div>
+  <p>
+    <%= link_to "create new article", new_article_path %>
+  </p>
+  <%= render 'article', obj: @articles %>
+  <div class="row justify-content-center" style="margin-top:2%">
+    <%= will_paginate %>
+  </div>
 </div>

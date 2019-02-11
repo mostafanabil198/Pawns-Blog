@@ -11,5 +11,11 @@
       <h4> <%= @user.userName %>'s Articles </h4>
     </div>
   </div>
-  <%= render 'articles/article', obj: @user.articles%>
+  <div class="row justify-content-center" style="margin-top:2%">
+    <%= will_paginate @user_articles%>
+  </div>
+  <%= render 'articles/article', obj: @user_articles%>
+  <div class="row justify-content-center" style="margin-top:2%">
+    <%= will_paginate @user_articles %>
+  </div>
 </div>

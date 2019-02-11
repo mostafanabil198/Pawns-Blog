@@ -5,7 +5,9 @@
     </div>
   </div>
 
-
+  <div class="row justify-content-center" style="margin-top:2%">
+    <%= will_paginate %>
+  </div>
 <% @users.each do |usr| %>
   <div class="row justify-content-center">
     <div class="col-6">
@@ -26,4 +28,7 @@
   </div>
 
   <% end %>
+  <div class="row justify-content-center" style="margin-top:2%">
+    <%= will_paginate %>
+  </div>
 </div>
