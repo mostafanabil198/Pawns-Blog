@@ -36,6 +36,10 @@ class UsersController < ApplicationController
     @users = User.paginate(page: params[:page], per_page: 5)
   end
 
+  def login
+    @users = User.all
+  end
+
   private
   def user_params
     params.require(:user).permit(:userName, :email, :password )
