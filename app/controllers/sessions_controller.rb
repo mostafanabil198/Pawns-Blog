@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    redirect_to articles_path if logged_in?
   end
 
   def create
@@ -15,6 +16,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    redirect_to articles_path if !logged_in?
     session[:user_id] = nil
     flash[:success] = "You have successfully logged out"
     redirect_to root_path

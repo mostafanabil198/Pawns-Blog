@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def new
+    redirect_to articles_path if logged_in?
     @user = User.new
   end
 
@@ -7,13 +8,15 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "welcome to Pawns blog #{@user.userName}"
-      redirect_to articles_path
+      session[:user_id] = @user.id
+      redirect_to user_path(@user.id)
     else
       render 'new'
     end
   end
 
   def edit
+    redirect_to articles_path if current_user != User.find(params[:id])
     @user = User.find(params[:id])
   end
 

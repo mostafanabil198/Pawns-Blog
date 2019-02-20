@@ -28,8 +28,10 @@
     </div>
     <div class="card-footer text-muted">
       <%= link_to "back to articles", articles_path %> |
-      <%= link_to "edit this article", edit_article_path(@article) %> |
-      <%= link_to "delete this article", article_path(@article), method: :delete, data: {confirm: "are you sure?"} %>
+        <% if logged_in? && current_user == @article.user %>
+          <%= link_to "edit this article", edit_article_path(@article) %> |
+          <%= link_to "delete this article", article_path(@article), method: :delete, data: {confirm: "are you sure?"} %>
+        <% end %>
     </div>
   </div>
 

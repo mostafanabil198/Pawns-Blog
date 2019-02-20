@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:edit, :destroy, :update, :show]
 
   def new
+    redirect_to article_path if !logged_in?
     @article = Article.new
   end
 
@@ -17,6 +18,7 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    redirect_to article_path if !logged_in? || current_user != Article.find(params[:id]).user
   end
 
   def update
@@ -32,10 +34,11 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Article.paginate(page: params[:page], per_page: 5)
+    @articles = Article.paginate(page: params[:page], per_page: 10)
   end
 
   def destroy
+    redirect_to article_path if !logged_in? || current_user != Article.find(params[:id]).user
     @article.destroy
     redirect_to articles_path
     flash[:notice] = "article was successfully deleted"
