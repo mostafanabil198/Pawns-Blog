@@ -21,16 +21,20 @@
   text-decoration-color: white;
 }
 
-.home-jumbotron{
-  padding-top: 13%;
-  text-align: center;
-  color: white;
-  background-image: asset-url("Blog_header_user_flow_02.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 51.4em;
-  margin-bottom: -4px;
+.block-home { 
+  border: 1px solid black;
+  border-radius: 5px;
 }
+// .jumbotron{
+//   padding-top: 13%;
+//   text-align: center;
+//   color: white;
+//   background-image: asset-url("Blog_header_user_flow_02.jpg");
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   height: 51.4em;
+//   margin-bottom: -4px;
+// }
 
 .footer {
   text-align: center;
